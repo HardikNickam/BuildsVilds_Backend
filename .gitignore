@@ -1,0 +1,460 @@
+# ============================================================================
+# BUILDVILDS BACKEND - .gitignore
+# ============================================================================
+
+# ============================================================================
+# SECURITY - CRITICAL FILES TO NEVER COMMIT
+# ============================================================================
+
+# Environment variables (contains secrets!)
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+.env.test
+.env.backup
+*.env
+
+# Secrets and keys
+secrets/
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+config/secrets.*
+
+# Database credentials
+database.conf
+db.conf
+
+# ============================================================================
+# PYTHON
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff (if you add Django later)
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff (if you add Flask components)
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# ============================================================================
+# POETRY & DEPENDENCY MANAGEMENT
+# ============================================================================
+
+# Poetry
+poetry.lock  # Remove this line if you want to commit lock file
+.venv/
+__pypackages__/
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# ============================================================================
+# FASTAPI & UVICORN
+# ============================================================================
+
+# FastAPI
+*.db
+*.sqlite
+*.sqlite3
+
+# Uvicorn
+uvicorn.log
+access.log
+
+# ============================================================================
+# DATABASE
+# ============================================================================
+
+# SQLite
+*.sqlite3
+*.db
+
+# PostgreSQL
+*.dump
+*.sql
+
+# MongoDB
+*.bson
+
+# Database backups
+backup/
+*.backup
+dumps/
+
+# ============================================================================
+# LOGS & MONITORING
+# ============================================================================
+
+# Log files
+logs/
+*.log
+*.log.*
+log/
+access.log
+error.log
+debug.log
+app.log
+uvicorn.log
+
+# Monitoring
+.prometheus/
+grafana/
+
+# ============================================================================
+# DEVELOPMENT TOOLS
+# ============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================================================
+# OPERATING SYSTEM
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# DOCKER & CONTAINERS
+# ============================================================================
+
+# Docker
+Dockerfile.dev
+docker-compose.override.yml
+docker-compose.local.yml
+.dockerignore
+
+# Container logs
+containers/
+
+# ============================================================================
+# DEPLOYMENT & CLOUD
+# ============================================================================
+
+# Deployment scripts with secrets
+deploy.sh
+deployment/
+k8s/secrets/
+
+# Cloud provider configs
+.aws/
+.gcp/
+.azure/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+.terraform.lock.hcl
+
+# ============================================================================
+# TESTING & QA
+# ============================================================================
+
+# Test databases
+test.db
+test.sqlite3
+*_test.db
+
+# Test results
+test-results/
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Load testing
+locust/
+stress-test/
+
+# ============================================================================
+# STATIC FILES & MEDIA
+# ============================================================================
+
+# User uploaded files
+uploads/
+media/
+static/uploads/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Generated files
+generated/
+build/
+dist/
+
+# ============================================================================
+# EMAIL & COMMUNICATION
+# ============================================================================
+
+# Email templates (if they contain sensitive info)
+# email-templates/ (uncomment if needed)
+
+# Email logs
+mail.log
+email.log
+
+# ============================================================================
+# MONITORING & ANALYTICS
+# ============================================================================
+
+# Performance monitoring
+.profiling/
+profiling/
+
+# Analytics
+analytics/
+metrics/
+
+# ============================================================================
+# BACKUP & ARCHIVE
+# ============================================================================
+
+# Backup files
+*.backup
+*.bak
+*.old
+*.orig
+*.save
+backup/
+backups/
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ============================================================================
+# PERSONAL & TEAM FILES
+# ============================================================================
+
+# Personal notes
+notes.txt
+TODO.txt
+NOTES.md
+personal/
+
+# Team documents (if sensitive)
+team-docs/
+internal/
+
+# ============================================================================
+# CUSTOM PROJECT FILES
+# ============================================================================
+
+# Custom scripts that might contain secrets
+scripts/deploy.sh
+scripts/backup.sh
+
+# Configuration files that might contain secrets
+config/production.py
+config/local.py
+
+# API documentation exports
+api-docs.json
+openapi.json
+
+# ============================================================================
+# OPTIONAL: UNCOMMENT IF NEEDED
+# ============================================================================
+
+# If you want to ignore Poetry lock file (not recommended for production)
+# poetry.lock
+
+# If you have sensitive documentation
+# docs/internal/
+# docs/api-keys/
+
+# If you have custom environment configurations
+# config/environments/
+
+# If you have migration files with sensitive data
+# migrations/data/
+
+# If you have custom SSL certificates
+# ssl/
+# certificates/
+
+# ============================================================================
+# END OF .gitignore
+# ============================================================================
