@@ -10,7 +10,7 @@ from jinja2 import Environment, BaseLoader
 from app.core.config import settings
 import logging
 from typing import Optional, Dict, Any
-from datetime import datetime
+from datetime import datetime, UTC
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -123,7 +123,7 @@ class EmailService:
             "app_name": settings.app_name,
             "frontend_url": settings.frontend_url,
             "expire_minutes": settings.otp_expire_minutes,
-            "year": datetime.now().year
+            "year": datetime.now(UTC).year
         }
         
         # HTML email template
@@ -234,7 +234,7 @@ class EmailService:
             "reset_link": reset_link,
             "app_name": settings.app_name,
             "frontend_url": settings.frontend_url,
-            "year": datetime.now().year
+            "year": datetime.now(UTC).year
         }
         
         # HTML email template
@@ -342,7 +342,7 @@ class EmailService:
             "identity": identity.title(),
             "app_name": settings.app_name,
             "frontend_url": settings.frontend_url,
-            "year": datetime.now().year
+            "year": datetime.now(UTC).year
         }
         
         # HTML email template

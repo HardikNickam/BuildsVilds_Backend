@@ -5,7 +5,7 @@ These schemas define the structure of data sent to and from the API.
 
 from pydantic import BaseModel, EmailStr, Field, validator
 from typing import Optional, List
-from datetime import datetime
+from datetime import datetime,UTC, timezone
 from app.models.user import UserRole
 
 # Request Schemas (Data coming from client)

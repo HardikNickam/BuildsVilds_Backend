@@ -158,6 +158,7 @@ async def verify_email(verify_data: VerifyEmailRequest):
         raise
     except Exception as e:
         logger.error(f"❌ Email verification error: {e}")
+        logger.error(f"Full traceback: {traceback.format_exc()}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="Internal server error during email verification"

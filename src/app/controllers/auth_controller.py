@@ -130,6 +130,8 @@ class AuthController:
         Raises:
             HTTPException: If verification fails
         """
+        import logging
+        logger = logging.getLogger(__name__)
         # Find the OTP
         otp = await OTP.find_one({
             "email": email,
@@ -142,6 +144,9 @@ class AuthController:
                 status_code=status.HTTP_400_BAD_REQUEST,
                 detail="No pending verification found for this email"
             )
+        logger.info(f"OTP expires_at: {otp.expires_at} (tzinfo: {otp.expires_at.tzinfo})")
+        logger.info(f"Current time: {datetime.now(UTC)} (tzinfo: {datetime.now(UTC).tzinfo})")
+        logger.info(f"OTP is_expired check: {otp.is_expired()}")
         
         # Verify the OTP
         is_valid = await otp.verify_otp(otp_code)
